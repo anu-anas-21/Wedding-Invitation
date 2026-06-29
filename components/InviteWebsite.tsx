@@ -1,0 +1,338 @@
+import InviteScripts from './InviteScripts';
+
+/** Exact markup clone of index.html body (nav → modal). */
+export default function InviteWebsite() {
+  return (
+    <>
+      <InviteScripts />
+
+      <nav className="nav" id="siteNav">
+        <a href="#hero" className="brand">
+          <svg className="motif draw-now" viewBox="0 0 200 200">
+            <use href="#motif-rosette" />
+          </svg>
+          M&amp;F · F&amp;R
+        </a>
+        <ul className="nav-links">
+          <li>
+            <a href="#celebration">Celebration</a>
+          </li>
+          <li>
+            <a href="#unions">Our Story</a>
+          </li>
+          <li>
+            <a href="#rsvp">RSVP</a>
+          </li>
+        </ul>
+        <a href="#rsvp" className="nav-cta">
+          RSVP
+        </a>
+      </nav>
+
+      <section className="hero" id="hero">
+        <svg className="hero-motif motif motif-spin draw-now" viewBox="0 0 200 200">
+          <use href="#motif-rosette" />
+        </svg>
+
+        <div className="hero-inner">
+          <p className="bismillah-ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+          <p className="bismillah-translit">Bismillāhir-Raḥmānir-Raḥīm</p>
+
+          <div className="hero-divider" />
+
+          <p className="hero-lead" data-kinetic id="heroLead">
+            Together with their families, we joyfully invite you to the wedding celebration of
+          </p>
+
+          <div className="couples-split">
+            <div className="couple-block cb-left">
+              <div className="cb-tag">Couple One</div>
+              <div className="cb-names">
+                Musfir<span className="amp">&amp;</span>Fasna
+              </div>
+              <div className="cb-full">Musfir Pullat — Fasna Machingal</div>
+            </div>
+
+            <div className="hero-and">
+              <span className="line" />
+              <span className="label">One Blessed Day</span>
+              <span className="line" />
+            </div>
+
+            <div className="couple-block cb-right">
+              <div className="cb-tag">Couple Two</div>
+              <div className="cb-names">
+                Fasil<span className="amp">&amp;</span>Rinshana
+              </div>
+              <div className="cb-full">Fasil Pullat — Fathima Rinshana</div>
+            </div>
+          </div>
+
+          <p className="countdown-label">Counting down to forever</p>
+          <div className="countdown" role="timer" aria-live="polite">
+            <div className="cd-box glass corner-frame">
+              <div className="cd-num gold-text" id="cd-days">
+                00
+              </div>
+              <div className="cd-label">Days</div>
+            </div>
+            <div className="cd-box glass corner-frame">
+              <div className="cd-num gold-text" id="cd-hours">
+                00
+              </div>
+              <div className="cd-label">Hours</div>
+            </div>
+            <div className="cd-box glass corner-frame">
+              <div className="cd-num gold-text" id="cd-mins">
+                00
+              </div>
+              <div className="cd-label">Minutes</div>
+            </div>
+            <div className="cd-box glass corner-frame">
+              <div className="cd-num gold-text" id="cd-secs">
+                00
+              </div>
+              <div className="cd-label">Seconds</div>
+            </div>
+          </div>
+
+          <div className="scroll-cue">
+            <span>Discover the Celebration</span>
+            <span className="stem" />
+          </div>
+        </div>
+      </section>
+
+      <section id="celebration">
+        <div className="container venue-wrap">
+          <p className="eyebrow reveal">The Celebration</p>
+          <h2 className="section-title reveal">Where We&apos;ll Celebrate</h2>
+          <p className="venue-sub reveal reveal-1">
+            One venue, two unions, and a single unforgettable evening shared with the people we
+            love most.
+          </p>
+
+          <div className="venue-card glass corner-frame reveal reveal-2">
+            <div className="venue-ornament">
+              <svg className="motif" viewBox="0 0 60 60">
+                <use href="#arch-icon" />
+              </svg>
+            </div>
+            <p className="venue-label">Venue</p>
+            <h3 className="venue-name gold-text">Al Jazeera Convention Centre</h3>
+            <div className="venue-divider" />
+            <div className="venue-date-row">
+              <span className="venue-day">Thursday</span>
+              <span className="venue-date">23 July 2026</span>
+            </div>
+            <p className="venue-note">
+              An evening of blessings, joy and celebration, shared together with family and
+              friends. Detailed timing will follow closer to the date — we can&apos;t wait to host
+              you.
+            </p>
+            <div className="venue-actions">
+              <a className="btn-map" href="/api/calendar" download="musfi-wedding-save-the-date.ics">
+                <svg viewBox="0 0 24 24">
+                  <use href="#calendar-icon" />
+                </svg>
+                Save the Date
+              </a>
+              <a
+                className="btn-map"
+                href="https://www.google.com/maps/search/?api=1&query=Al+Jazeera+Convention+Centre+Kerala"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24">
+                  <use href="#pin-icon" />
+                </svg>
+                View Location on Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="unions">
+        <div className="container">
+          <p className="eyebrow reveal">Our Story</p>
+          <h2 className="section-title reveal">A Joint Celebration of Two Unions</h2>
+          <p className="story-lead reveal reveal-1">
+            Two beloved couples, bound by family and faith, beginning their forever on the very
+            same blessed day.
+          </p>
+
+          <svg
+            className="motif"
+            viewBox="0 0 200 200"
+            style={{ width: 56, height: 56, margin: '34px auto 0', display: 'block' }}
+          >
+            <use href="#motif-rosette" />
+          </svg>
+
+          <div className="couples-grid">
+            <div className="couple-card glass corner-frame reveal reveal-2">
+              <div className="ci-wrap">
+                <svg viewBox="0 0 220 230" style={{ color: 'var(--gold-400)' }}>
+                  <use href="#couple-icon" />
+                </svg>
+              </div>
+              <h3 className="cc-names">Musfir &amp; Fasna</h3>
+              <p className="cc-full">Musfir Pullat &amp; Fasna Machingal</p>
+              <p className="cc-tag">&ldquo;A union written in patience and grace.&rdquo;</p>
+            </div>
+
+            <div className="couple-card glass corner-frame maroon-accent reveal reveal-3">
+              <div className="ci-wrap">
+                <svg viewBox="0 0 220 230" style={{ color: 'var(--maroon-500)' }}>
+                  <use href="#couple-icon" />
+                </svg>
+              </div>
+              <h3 className="cc-names">Fasil &amp; Rinshana</h3>
+              <p className="cc-full">Fasil Pullat &amp; Fathima Rinshana</p>
+              <p className="cc-tag">&ldquo;Two souls, one beautiful new beginning.&rdquo;</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rsvp">
+        <div className="container">
+          <p className="eyebrow reveal">Kindly Respond</p>
+          <h2 className="section-title reveal">Your Presence Is Our Greatest Blessing</h2>
+          <p className="story-lead reveal reveal-1">
+            Please let us know if you&apos;ll be joining the celebration — we would love to have you
+            there.
+          </p>
+
+          <form className="rsvp-card glass corner-frame reveal reveal-2" id="rsvpForm" noValidate>
+            <div className="field">
+              <label htmlFor="guestName">Guest Name</label>
+              <input
+                type="text"
+                id="guestName"
+                name="guestName"
+                placeholder="Your full name"
+                required
+              />
+            </div>
+
+            <div className="field">
+              <label htmlFor="guestContact">Contact Number</label>
+              <input
+                type="tel"
+                id="guestContact"
+                name="guestContact"
+                placeholder="e.g. +91 98765 43210"
+                required
+              />
+            </div>
+
+            <div className="field">
+              <span className="group-label">Joyfully attending the celebration of</span>
+              <div className="pill-row" id="coupleGroup">
+                <label className="pill">
+                  <input type="radio" name="couple" value="Musfir & Fasna" required />
+                  <span>Musfir &amp; Fasna</span>
+                </label>
+                <label className="pill">
+                  <input type="radio" name="couple" value="Fasil & Rinshana" />
+                  <span>Fasil &amp; Rinshana</span>
+                </label>
+                <label className="pill">
+                  <input type="radio" name="couple" value="Both Couples" />
+                  <span>Both Couples</span>
+                </label>
+              </div>
+            </div>
+
+            <div className="field">
+              <span className="group-label">Attendance RSVP</span>
+              <div className="pill-row" id="attendanceGroup">
+                <label className="pill">
+                  <input type="radio" name="attendance" value="Will Attend" required />
+                  <span>Will Attend</span>
+                </label>
+                <label className="pill">
+                  <input type="radio" name="attendance" value="Unable to Attend" />
+                  <span>Unable to Attend</span>
+                </label>
+              </div>
+            </div>
+
+            <div className="field">
+              <label htmlFor="guestCount">Number of Guests Accompanying</label>
+              <select id="guestCount" name="guestCount" defaultValue="0">
+                <option value="0">Just me</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5+</option>
+              </select>
+            </div>
+
+            <div className="field">
+              <label htmlFor="wishes">Send Blessings &amp; Warm Wishes</label>
+              <textarea
+                id="wishes"
+                name="wishes"
+                placeholder="Write your blessings for the couples..."
+              />
+            </div>
+
+            <button type="submit" className="btn-submit" id="submitBtn">
+              <span className="wave-ring" />
+              <span>Send Our RSVP</span>
+            </button>
+
+            <p className="form-note">
+              This invitation is a personal keepsake — your RSVP is shared directly with the
+              families.
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        <svg className="foot-motif motif" viewBox="0 0 200 200">
+          <use href="#motif-rosette" />
+        </svg>
+        <p className="foot-line">With heartfelt love and gratitude,</p>
+        <p className="foot-families">The Pullat Families</p>
+        <p className="foot-fine">
+          Musfir &amp; Fasna · Fasil &amp; Rinshana — 23.07.2026 · Crafted with love as a digital
+          keepsake
+        </p>
+      </footer>
+
+      <div
+        className="modal-overlay"
+        id="rsvpModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <div className="modal-box glass corner-frame">
+          <svg
+            viewBox="0 0 200 200"
+            className="motif draw-now"
+            style={{ color: 'var(--gold-400)' }}
+          >
+            <use href="#motif-rosette" />
+          </svg>
+          <h3 className="modal-title gold-text" id="modalTitle">
+            Jazakallah Khair
+          </h3>
+          <p className="modal-text">
+            Your RSVP has been received with love. We can&apos;t wait to celebrate this joyous day
+            with you. 🤍
+          </p>
+          <button type="button" className="modal-close" id="modalClose">
+            Close
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}

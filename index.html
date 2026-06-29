@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Musfir &amp; Fasna · Fasil &amp; Rinshana — Wedding Invitation</title>
+<meta name="description" content="Together with their families, you are joyfully invited to the wedding celebration of Musfir &amp; Fasna and Fasil &amp; Rinshana — Thursday, 23 July 2026, Al Jazeera Convention Centre.">
+<meta name="theme-color" content="#064e3b">
+
+<!-- Open Graph tags for rich WhatsApp / social previews. Add an og:image once you have a poster graphic hosted online. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Musfir &amp; Fasna · Fasil &amp; Rinshana — Wedding Invitation">
+<meta property="og:description" content="A joyous double wedding celebration · Thursday, 23 July 2026 · Al Jazeera Convention Centre">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500;1,600&family=Jost:wght@300;400;500;600;700&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   0. RESET
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; cursor: pointer; background: none; border: none; color: inherit; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+input, select, textarea { font: inherit; color: inherit; }
+
+/* ============================================================
+   1. DESIGN TOKENS
+   ============================================================ */
+:root{
+  /* -- palette : deep royal emerald, rich ruby maroon, gleaming fluid gold -- */
+  --emerald-950:#020e0a;
+  --emerald-900:#03261b;
+  --emerald-800:#064e3b;   /* primary brief colour */
+  --emerald-700:#0a6b50;
+  --maroon-900:#3a0712;
+  --maroon-700:#6e0f1f;    /* rich ruby maroon */
+  --maroon-500:#9c2a3c;
+  --gold-200:#f8ecc4;
+  --gold-300:#efd998;
+  --gold-400:#e3c573;
+  --gold-500:#d4af37;      /* primary brief colour */
+  --gold-600:#b8902a;
+  --gold-700:#9a7822;
+  --ivory:#f8f2e6;
+  --ink:#05140f;
+
+  --panel: rgba(248, 242, 230, 0.06);
+  --panel-border: rgba(212, 175, 55, 0.35);
+
+  /* -- type -- */
+  --font-display: 'Cinzel', serif;
+  --font-accent: 'Cormorant Garamond', serif;
+  --font-ui: 'Jost', sans-serif;
+  --font-arabic: 'Reem Kufi', sans-serif;
+
+  --ease: cubic-bezier(.16,1,.3,1);
+}
+
+/* ============================================================
+   2. BASE
+   ============================================================ */
+body{
+  font-family: var(--font-ui);
+  background: var(--ink);
+  color: var(--ivory);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection{ background: var(--gold-500); color: var(--ink); }
+
+::-webkit-scrollbar{ width: 8px; }
+::-webkit-scrollbar-track{ background: var(--emerald-950); }
+::-webkit-scrollbar-thumb{ background: var(--gold-600); border-radius: 4px; }
+
+:focus-visible{ outline: 2px solid var(--gold-400); outline-offset: 3px; border-radius: 4px; }
+
+/* page-wide ambient backdrop */
+.bg-veil{
+  position: fixed; inset: 0; z-index: -2;
+  background:
+    radial-gradient(ellipse 80% 60% at 15% -10%, rgba(212,175,55,0.10), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 100% 10%, rgba(110,15,31,0.35), transparent 60%),
+    radial-gradient(ellipse 90% 70% at 50% 110%, rgba(212,175,55,0.07), transparent 60%),
+    linear-gradient(160deg, var(--emerald-950) 0%, var(--emerald-900) 45%, var(--ink) 100%);
+}
+
+#dust-canvas{
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  width: 100%; height: 100%;
+}
+
+.container{ max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+.eyebrow{
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  font-family: var(--font-ui); font-size: 12.5px; letter-spacing: .32em;
+  text-transform: uppercase; color: var(--gold-300); margin-bottom: 18px;
+}
+.eyebrow::before, .eyebrow::after{
+  content: ''; width: 28px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-500));
+}
+.eyebrow::after{ background: linear-gradient(90deg, var(--gold-500), transparent); }
+
+.section-title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: .02em;
+  font-size: clamp(28px, 4.4vw, 46px);
+  text-align: center;
+  color: var(--ivory);
+}
+
+.gold-text{
+  background: linear-gradient(110deg, var(--gold-300) 10%, var(--gold-500) 35%, var(--gold-200) 50%, var(--gold-600) 65%, var(--gold-300) 90%);
+  background-size: 250% auto;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: shimmer 7s linear infinite;
+}
+@keyframes shimmer{ to{ background-position: 250% center; } }
+
+.italic-accent{
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--gold-200);
+}
+
+section{ position: relative; padding: 120px 0; }
+
+/* reveal-on-scroll utility */
+.reveal{ opacity: 0; transform: translateY(46px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.reveal.is-visible{ opacity: 1; transform: translateY(0); }
+.reveal-1{ transition-delay: .08s; } .reveal-2{ transition-delay: .18s; } .reveal-3{ transition-delay: .28s; } .reveal-4{ transition-delay: .38s; }
+
+/* kinetic word-reveal */
+[data-kinetic] .word{
+  display: inline-block; opacity: 0; transform: translateY(26px) rotateX(-50deg);
+  transform-origin: bottom center;
+  animation: wordIn .85s var(--ease) forwards;
+  animation-play-state: paused;
+}
+.in-view [data-kinetic] .word, [data-kinetic].in-view .word{ animation-play-state: running; }
+@keyframes wordIn{ to{ opacity: 1; transform: translateY(0) rotateX(0); } }
+
+/* glass panel */
+.glass{
+  background: linear-gradient(150deg, rgba(255,255,255,.07), rgba(255,255,255,.015));
+  border: 1px solid var(--panel-border);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border-radius: 26px;
+  box-shadow: 0 30px 80px -30px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.06);
+  position: relative;
+}
+.corner-frame::before, .corner-frame::after,
+.corner-frame .cf-tl, .corner-frame .cf-br{
+  content: ''; position: absolute; width: 26px; height: 26px;
+  border-color: var(--gold-400); pointer-events: none;
+}
+.corner-frame::before{ top: 14px; left: 14px; border-top: 1.5px solid var(--gold-400); border-left: 1.5px solid var(--gold-400); border-top-left-radius: 8px; }
+.corner-frame::after{ bottom: 14px; right: 14px; border-bottom: 1.5px solid var(--gold-400); border-right: 1.5px solid var(--gold-400); border-bottom-right-radius: 8px; }
+
+/* recurring rosette motif */
+.motif{
+  color: var(--gold-500); filter: drop-shadow(0 0 18px rgba(212,175,55,.25));
+  opacity: 0; transform: scale(.72) rotate(-10deg);
+  transition: opacity 1.3s var(--ease), transform 1.3s var(--ease);
+}
+.motif.in-view, .motif.draw-now{ opacity: 1; transform: scale(1) rotate(0deg); }
+
+.motif-spin{ animation: spin 70s linear infinite; }
+.motif-spin.draw-now{ transform: none; } /* avoid fighting the spin keyframes */
+@keyframes spin{ to{ transform: rotate(360deg); } }
+
+/* ============================================================
+   3. NAV
+   ============================================================ */
+.nav{
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 28px; transition: background .4s var(--ease), backdrop-filter .4s var(--ease), padding .4s var(--ease);
+}
+.nav.scrolled{
+  background: rgba(3,15,11,.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 12px 28px;
+  border-bottom: 1px solid rgba(212,175,55,.18);
+}
+.brand{ display: flex; align-items: center; gap: 10px; font-family: var(--font-display); letter-spacing: .12em; font-size: 14px; color: var(--gold-300); }
+.brand svg{ width: 22px; height: 22px; }
+.nav-links{ display: flex; align-items: center; gap: 30px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.nav-links a{ opacity: .85; position: relative; padding-bottom: 4px; }
+.nav-links a:hover{ opacity: 1; color: var(--gold-300); }
+.nav-cta{
+  border: 1px solid var(--gold-500); color: var(--gold-300);
+  padding: 9px 20px; border-radius: 999px; font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase;
+  transition: background .3s, color .3s, box-shadow .3s;
+}
+.nav-cta:hover{ background: var(--gold-500); color: var(--ink); box-shadow: 0 0 26px rgba(212,175,55,.45); }
+@media (max-width: 760px){ .nav-links{ display: none; } }
+
+/* ============================================================
+   4. HERO
+   ============================================================ */
+.hero{
+  min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 150px 20px 80px; overflow: hidden; position: relative;
+}
+.hero-motif{
+  position: absolute; top: 50%; left: 50%; width: min(900px, 130vw); height: min(900px, 130vw);
+  transform: translate(-50%,-50%); z-index: 0; pointer-events: none;
+  opacity: .14 !important;
+}
+.hero-inner{ position: relative; z-index: 2; max-width: 920px; }
+
+.bismillah-ar{
+  font-family: var(--font-arabic); font-weight: 600;
+  font-size: clamp(26px, 4.6vw, 42px); color: var(--gold-300);
+  opacity: 0; animation: fadeUp 1.4s var(--ease) .2s forwards;
+  letter-spacing: .02em;
+}
+.bismillah-translit{
+  font-family: var(--font-accent); font-style: italic; font-weight: 500;
+  font-size: clamp(13px, 1.6vw, 16px); color: rgba(248,242,230,.55);
+  letter-spacing: .1em; margin-top: 10px;
+  opacity: 0; animation: fadeUp 1.4s var(--ease) .55s forwards;
+}
+@keyframes fadeUp{ from{ opacity: 0; transform: translateY(14px); } to{ opacity: 1; transform: translateY(0); } }
+
+.hero-divider{
+  width: 1px; height: 46px; margin: 30px auto;
+  background: linear-gradient(to bottom, transparent, var(--gold-500), transparent);
+  opacity: 0; animation: fadeUp 1s var(--ease) 1s forwards;
+}
+
+.hero-lead{
+  font-family: var(--font-accent); font-style: italic; font-weight: 500;
+  font-size: clamp(17px, 2.3vw, 25px); line-height: 1.55;
+  color: var(--ivory); max-width: 680px; margin: 0 auto 50px;
+}
+.hero-lead .word{ animation-delay: calc(var(--d, 0) * .045s + .2s) !important; }
+.hero .in-view .hero-lead .word, .hero-lead.kinetic-ready .word{ animation-play-state: running; }
+
+.couples-split{
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 18px;
+  margin: 0 auto 56px; max-width: 880px;
+}
+.couple-block{
+  opacity: 0; transform: translateY(36px);
+  animation: fadeUp 1s var(--ease) forwards;
+}
+.couple-block.cb-left{ animation-delay: 1.3s; }
+.couple-block.cb-right{ animation-delay: 1.5s; }
+.couple-block .cb-tag{ font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--gold-400); margin-bottom: 10px; }
+.couple-block .cb-names{
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(26px, 4vw, 40px); line-height: 1.15;
+}
+.couple-block .cb-names .amp{ display: block; font-family: var(--font-accent); font-style: italic; font-weight: 500; font-size: .55em; color: var(--gold-400); margin: 2px 0; }
+.couple-block .cb-full{ margin-top: 12px; font-size: 13.5px; letter-spacing: .03em; color: rgba(248,242,230,.65); }
+
+.hero-and{
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  opacity: 0; animation: fadeUp 1s var(--ease) 1.4s forwards;
+}
+.hero-and .line{ width: 1px; height: 30px; background: linear-gradient(to bottom, transparent, var(--gold-500)); }
+.hero-and .label{ font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-300); white-space: nowrap; writing-mode: vertical-rl; }
+
+.countdown-label{
+  font-family: var(--font-accent); font-style: italic; color: var(--gold-200);
+  font-size: 15px; margin-bottom: 18px;
+  opacity: 0; animation: fadeUp 1s var(--ease) 1.7s forwards;
+}
+.countdown{
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 520px; margin: 0 auto;
+  opacity: 0; animation: fadeUp 1s var(--ease) 1.85s forwards;
+}
+.cd-box{ padding: 18px 8px; border-radius: 16px; text-align: center; }
+.cd-num{ font-family: var(--font-display); font-size: clamp(24px, 4vw, 34px); font-weight: 700; }
+.cd-label{ font-size: 10px; letter-spacing: .18em; text-transform: uppercase; margin-top: 6px; color: rgba(248,242,230,.6); }
+
+.scroll-cue{
+  margin-top: 60px; display: flex; flex-direction: column; align-items: center; gap: 10px;
+  font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: rgba(248,242,230,.55);
+  opacity: 0; animation: fadeUp 1s var(--ease) 2.1s forwards;
+}
+.scroll-cue .stem{ width: 1px; height: 34px; background: var(--gold-500); position: relative; overflow: hidden; }
+.scroll-cue .stem::after{
+  content: ''; position: absolute; left: 0; top: -100%; width: 100%; height: 100%; background: var(--ivory);
+  animation: stemDrop 2.2s ease-in-out infinite;
+}
+@keyframes stemDrop{ 0%{ top: -100%; } 60%{ top: 100%; } 100%{ top: 100%; } }
+
+@media (max-width: 720px){
+  .couples-split{ grid-template-columns: 1fr; gap: 26px; }
+  .hero-and{ flex-direction: row; gap: 14px; }
+  .hero-and .line{ width: 30px; height: 1px; background: linear-gradient(to right, transparent, var(--gold-500), transparent); }
+  .hero-and .label{ writing-mode: horizontal-tb; }
+  .countdown{ max-width: 360px; gap: 10px; }
+}
+
+/* ============================================================
+   5. VENUE / CELEBRATION DETAILS
+   ============================================================ */
+.venue-wrap{ max-width: 740px; margin: 0 auto; text-align: center; }
+.venue-sub{ font-family: var(--font-accent); font-style: italic; color: rgba(248,242,230,.65); font-size: 16px; margin: 14px auto 60px; max-width: 540px; }
+
+.venue-card{ padding: 56px 40px 48px; text-align: center; margin-top: 10px; }
+.venue-ornament{ position: absolute; top: -34px; left: 50%; transform: translateX(-50%); width: 68px; height: 68px; background: var(--ink); border-radius: 50%; border: 1px solid var(--panel-border); display: flex; align-items: center; justify-content: center; }
+.venue-ornament svg{ width: 38px; height: 38px; }
+
+.venue-label{ font-size: 12px; letter-spacing: .3em; text-transform: uppercase; color: var(--gold-300); margin-bottom: 16px; }
+.venue-name{
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(26px, 4.6vw, 44px); line-height: 1.25; letter-spacing: .01em;
+  margin-bottom: 28px;
+}
+.venue-divider{ width: 60px; height: 1px; background: var(--gold-500); margin: 0 auto 28px; opacity: .6; }
+
+.venue-date-row{ display: flex; align-items: baseline; justify-content: center; gap: 18px; flex-wrap: wrap; margin-bottom: 18px; }
+.venue-day{ font-family: var(--font-accent); font-style: italic; font-size: 19px; color: var(--gold-200); }
+.venue-date{ font-family: var(--font-display); font-size: clamp(20px, 3vw, 28px); letter-spacing: .03em; }
+
+.venue-note{ font-size: 13.5px; color: rgba(248,242,230,.55); max-width: 420px; margin: 0 auto 34px; line-height: 1.7; }
+
+.btn-map{
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 32px; border-radius: 999px; border: 1px solid var(--gold-500);
+  font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-200);
+  position: relative; overflow: hidden; isolation: isolate;
+  transition: color .35s, border-color .35s;
+}
+.btn-map svg{ width: 16px; height: 16px; }
+.btn-map::before{
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(100deg, var(--gold-600), var(--gold-300), var(--gold-600));
+  transform: translateX(-100%); transition: transform .5s var(--ease);
+}
+.btn-map:hover{ color: var(--ink); }
+.btn-map:hover::before{ transform: translateX(0); }
+
+.venue-actions{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* ============================================================
+   6. COUPLES / OUR STORY
+   ============================================================ */
+.couples-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 36px; max-width: 980px; margin: 60px auto 0; }
+.couple-card{ padding: 46px 34px 38px; text-align: center; }
+.couple-card .ci-wrap{ width: 150px; height: 175px; margin: 0 auto 22px; }
+.couple-card .ci-wrap svg{ width: 100%; height: 100%; }
+.couple-card .cc-names{ font-family: var(--font-display); font-weight: 700; font-size: clamp(22px,3vw,28px); margin-bottom: 10px; }
+.couple-card .cc-full{ font-size: 13.5px; letter-spacing: .03em; color: rgba(248,242,230,.6); margin-bottom: 16px; }
+.couple-card .cc-tag{ font-family: var(--font-accent); font-style: italic; font-size: 15.5px; color: var(--gold-200); }
+.couple-card.maroon-accent{ border-color: rgba(156,42,60,.45); }
+
+.story-lead{ text-align: center; max-width: 640px; margin: 0 auto; font-family: var(--font-accent); font-style: italic; color: rgba(248,242,230,.7); font-size: 16.5px; }
+
+@media (max-width: 760px){ .couples-grid{ grid-template-columns: 1fr; } }
+
+/* ============================================================
+   7. RSVP
+   ============================================================ */
+.rsvp-card{ max-width: 720px; margin: 50px auto 0; padding: 46px 30px; }
+@media (min-width: 600px){ .rsvp-card{ padding: 54px 56px; } }
+
+.field{ margin-bottom: 26px; }
+.field label, .field > .group-label{ display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-300); margin-bottom: 10px; }
+.field input[type="text"], .field input[type="tel"], .field select, .field textarea{
+  width: 100%; padding: 14px 16px; border-radius: 12px;
+  background: rgba(255,255,255,.05); border: 1px solid rgba(212,175,55,.28);
+  color: var(--ivory); font-size: 14.5px; transition: border-color .3s, background .3s;
+}
+.field input::placeholder, .field textarea::placeholder{ color: rgba(248,242,230,.35); }
+.field input:focus, .field select:focus, .field textarea:focus{ border-color: var(--gold-500); background: rgba(255,255,255,.08); }
+.field textarea{ min-height: 100px; resize: vertical; font-family: var(--font-ui); }
+
+.field select{ appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23d4af37'><path d='M5 7l5 6 5-6z'/></svg>");
+  background-repeat: no-repeat; background-position: right 14px center; background-size: 14px;
+  padding-right: 38px;
+}
+.field select option{ background: var(--emerald-950); color: var(--ivory); }
+
+.pill-row{ display: flex; flex-wrap: wrap; gap: 10px; }
+.pill{ position: relative; flex: 1 1 auto; }
+.pill input{ position: absolute; opacity: 0; width: 0; height: 0; }
+.pill span{
+  display: block; text-align: center; padding: 12px 16px; border-radius: 999px;
+  border: 1px solid rgba(212,175,55,.32); font-size: 13px; letter-spacing: .03em;
+  transition: background .3s, color .3s, border-color .3s, box-shadow .3s;
+  white-space: nowrap;
+}
+.pill.is-checked span{ background: linear-gradient(100deg, var(--gold-600), var(--gold-300)); color: var(--ink); border-color: var(--gold-300); box-shadow: 0 8px 24px -8px rgba(212,175,55,.5); }
+.pill:hover span{ border-color: var(--gold-400); }
+
+.btn-submit{
+  width: 100%; margin-top: 14px; padding: 18px 0; border-radius: 999px;
+  background: linear-gradient(100deg, var(--gold-600), var(--gold-400), var(--gold-300), var(--gold-500));
+  color: var(--ink); font-size: 13.5px; letter-spacing: .2em; text-transform: uppercase; font-weight: 600;
+  position: relative; overflow: hidden; isolation: isolate;
+}
+.btn-submit span{ position: relative; z-index: 2; }
+.btn-submit .wave-ring{
+  position: absolute; top: 50%; left: 50%; width: 10px; height: 10px; border-radius: 50%;
+  background: rgba(255,255,255,.9); transform: translate(-50%,-50%) scale(0); opacity: 0; z-index: 1;
+}
+.btn-submit.firing .wave-ring{ animation: waveRing .75s ease-out forwards; }
+@keyframes waveRing{ 0%{ transform: translate(-50%,-50%) scale(0); opacity: .9; } 100%{ transform: translate(-50%,-50%) scale(36); opacity: 0; } }
+.btn-submit:hover{ filter: brightness(1.08); }
+.btn-submit:active{ transform: translateY(1px); }
+
+.form-note{ font-size: 12px; color: rgba(248,242,230,.4); text-align: center; margin-top: 16px; }
+
+/* ============================================================
+   8. MODAL
+   ============================================================ */
+.modal-overlay{
+  position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center;
+  background: rgba(2,10,7,.78); backdrop-filter: blur(6px);
+  opacity: 0; visibility: hidden; transition: opacity .4s var(--ease), visibility .4s;
+  padding: 20px;
+}
+.modal-overlay.open{ opacity: 1; visibility: visible; }
+.modal-box{
+  max-width: 420px; width: 100%; padding: 46px 34px; text-align: center; border-radius: 26px;
+  transform: scale(.88) translateY(20px); transition: transform .45s var(--ease);
+}
+.modal-overlay.open .modal-box{ transform: scale(1) translateY(0); }
+.modal-box svg{ width: 52px; height: 52px; margin: 0 auto 18px; }
+.modal-title{ font-family: var(--font-display); font-weight: 700; font-size: 26px; margin-bottom: 12px; }
+.modal-text{ font-size: 14.5px; color: rgba(248,242,230,.7); line-height: 1.7; margin-bottom: 28px; }
+.modal-close{
+  display: inline-block; padding: 12px 32px; border-radius: 999px; border: 1px solid var(--gold-500);
+  font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-200);
+  transition: background .3s, color .3s;
+}
+.modal-close:hover{ background: var(--gold-500); color: var(--ink); }
+
+/* ============================================================
+   9. FOOTER
+   ============================================================ */
+footer{ padding: 70px 20px 50px; text-align: center; }
+footer .foot-motif{ width: 64px; height: 64px; margin: 0 auto 26px; opacity: .8; }
+footer .foot-line{ font-family: var(--font-accent); font-style: italic; color: var(--gold-200); font-size: 17px; margin-bottom: 8px; }
+footer .foot-families{ font-family: var(--font-display); font-size: 15px; letter-spacing: .04em; margin-bottom: 26px; }
+footer .foot-fine{ font-size: 11.5px; letter-spacing: .05em; color: rgba(248,242,230,.35); }
+
+/* ============================================================
+   10. REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+  [data-kinetic] .word{ opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-veil"></div>
+<canvas id="dust-canvas" aria-hidden="true"></canvas>
+
+<!-- ============== SHARED SVG SYMBOLS ============== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8ecc4"/>
+      <stop offset="45%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#9a7822"/>
+    </linearGradient>
+
+    <!-- rosette / mandala motif : the page's recurring signature -->
+    <symbol id="motif-rosette" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="100" cy="100" r="92"/>
+      <circle cx="100" cy="100" r="72"/>
+      <rect x="42" y="42" width="116" height="116" transform="rotate(0 100 100)"/>
+      <rect x="42" y="42" width="116" height="116" transform="rotate(45 100 100)"/>
+      <circle cx="100" cy="15" r="3.4" fill="currentColor" stroke="none"/>
+      <circle cx="160.2" cy="39.8" r="3.4" fill="currentColor" stroke="none"/>
+      <circle cx="185" cy="100" r="3.4" fill="currentColor" stroke="none"/>
+      <circle cx="160.2" cy="160.2" r="3.4" fill="currentColor" stroke="none"/>
+      <circle cx="100" cy="185" r="3.4" fill="currentColor" stroke="none"/>
+      <circle cx="39.8" cy="160.2" r="3.4" fill="currentColor" stroke="none"/>
+      <circle cx="15" cy="100" r="3.4" fill="currentColor" stroke="none"/>
+      <circle cx="39.8" cy="39.8" r="3.4" fill="currentColor" stroke="none"/>
+    </symbol>
+
+    <!-- couple silhouette icon (faceless, abstract line art) -->
+    <symbol id="couple-icon" viewBox="0 0 220 230" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <!-- groom -->
+      <circle cx="62" cy="46" r="20"/>
+      <path d="M44,34 Q62,18 80,34"/>
+      <path d="M38,200 Q38,96 62,76 Q86,96 86,200 Z"/>
+      <line x1="62" y1="80" x2="62" y2="196"/>
+      <circle cx="62" cy="104" r="2" fill="currentColor" stroke="none"/>
+      <circle cx="62" cy="128" r="2" fill="currentColor" stroke="none"/>
+      <circle cx="62" cy="152" r="2" fill="currentColor" stroke="none"/>
+      <!-- bride -->
+      <circle cx="158" cy="46" r="20"/>
+      <path d="M134,36 Q158,4 182,36 Q186,80 168,118 Q158,104 148,118 Q130,80 134,36 Z"/>
+      <path d="M132,200 Q132,108 158,86 Q184,108 184,200 Z"/>
+      <line x1="148" y1="150" x2="148" y2="196"/>
+      <line x1="168" y1="150" x2="168" y2="196"/>
+      <circle cx="158" cy="100" r="2.6" fill="currentColor" stroke="none"/>
+      <!-- joined hands + sparkle -->
+      <path d="M86,168 Q110,182 132,168" stroke-width="1.4"/>
+      <path d="M110,18 l0,12 M104,24 l12,0" stroke-width="1.6"/>
+    </symbol>
+
+    <!-- arch / venue ornament -->
+    <symbol id="arch-icon" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10,52 V30 Q10,10 30,10 Q50,10 50,30 V52"/>
+      <path d="M18,52 V32 Q18,18 30,18 Q42,18 42,32 V52"/>
+      <circle cx="30" cy="10" r="2.2" fill="currentColor" stroke="none"/>
+    </symbol>
+
+    <!-- map pin icon -->
+    <symbol id="pin-icon" viewBox="0 0 24 24">
+      <path d="M12 22s7-7.4 7-13a7 7 0 1 0-14 0c0 5.6 7 13 7 13z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="12" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    </symbol>
+
+    <symbol id="calendar-icon" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M3 9h18" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============== NAV ============== -->
+<nav class="nav" id="siteNav">
+  <a href="#hero" class="brand">
+    <svg class="motif draw-now" viewBox="0 0 200 200"><use href="#motif-rosette"/></svg>
+    M&amp;F · F&amp;R
+  </a>
+  <ul class="nav-links">
+    <li><a href="#celebration">Celebration</a></li>
+    <li><a href="#unions">Our Story</a></li>
+    <li><a href="#rsvp">RSVP</a></li>
+  </ul>
+  <a href="#rsvp" class="nav-cta">RSVP</a>
+</nav>
+
+<!-- ============== HERO ============== -->
+<section class="hero" id="hero">
+  <svg class="hero-motif motif motif-spin draw-now" viewBox="0 0 200 200"><use href="#motif-rosette"/></svg>
+
+  <div class="hero-inner">
+    <p class="bismillah-ar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+    <p class="bismillah-translit">Bismillāhir-Raḥmānir-Raḥīm</p>
+
+    <div class="hero-divider"></div>
+
+    <p class="hero-lead" data-kinetic id="heroLead">Together with their families, we joyfully invite you to the wedding celebration of</p>
+
+    <div class="couples-split">
+      <div class="couple-block cb-left">
+        <div class="cb-tag">Couple One</div>
+        <div class="cb-names">Musfir<span class="amp">&amp;</span>Fasna</div>
+        <div class="cb-full">Musfir Pullat — Fasna Machingal</div>
+      </div>
+
+      <div class="hero-and">
+        <span class="line"></span>
+        <span class="label">One Blessed Day</span>
+        <span class="line"></span>
+      </div>
+
+      <div class="couple-block cb-right">
+        <div class="cb-tag">Couple Two</div>
+        <div class="cb-names">Fasil<span class="amp">&amp;</span>Rinshana</div>
+        <div class="cb-full">Fasil Pullat — Fathima Rinshana</div>
+      </div>
+    </div>
+
+    <p class="countdown-label">Counting down to forever</p>
+    <div class="countdown" role="timer" aria-live="polite">
+      <div class="cd-box glass corner-frame"><div class="cd-num gold-text" id="cd-days">00</div><div class="cd-label">Days</div></div>
+      <div class="cd-box glass corner-frame"><div class="cd-num gold-text" id="cd-hours">00</div><div class="cd-label">Hours</div></div>
+      <div class="cd-box glass corner-frame"><div class="cd-num gold-text" id="cd-mins">00</div><div class="cd-label">Minutes</div></div>
+      <div class="cd-box glass corner-frame"><div class="cd-num gold-text" id="cd-secs">00</div><div class="cd-label">Seconds</div></div>
+    </div>
+
+    <div class="scroll-cue">
+      <span>Discover the Celebration</span>
+      <span class="stem"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== VENUE / CELEBRATION DETAILS ============== -->
+<section id="celebration">
+  <div class="container venue-wrap">
+    <p class="eyebrow reveal">The Celebration</p>
+    <h2 class="section-title reveal">Where We'll Celebrate</h2>
+    <p class="venue-sub reveal reveal-1">One venue, two unions, and a single unforgettable evening shared with the people we love most.</p>
+
+    <div class="venue-card glass corner-frame reveal reveal-2">
+      <div class="venue-ornament"><svg class="motif" viewBox="0 0 60 60"><use href="#arch-icon"/></svg></div>
+      <p class="venue-label">Venue</p>
+      <h3 class="venue-name gold-text">Al Jazeera Convention Centre</h3>
+      <div class="venue-divider"></div>
+      <div class="venue-date-row">
+        <span class="venue-day">Thursday</span>
+        <span class="venue-date">23 July 2026</span>
+      </div>
+      <!-- TODO: add exact reception time once finalised by the families -->
+      <p class="venue-note">An evening of blessings, joy and celebration, shared together with family and friends. Detailed timing will follow closer to the date — we can't wait to host you.</p>
+      <!-- TODO: replace with the exact Google Maps place link for precise directions -->
+      <div class="venue-actions">
+        <a class="btn-map" href="/api/calendar" download="musfi-wedding-save-the-date.ics">
+          <svg viewBox="0 0 24 24"><use href="#calendar-icon"/></svg>
+          Save the Date
+        </a>
+        <a class="btn-map" href="https://www.google.com/maps/search/?api=1&query=Al+Jazeera+Convention+Centre+Kerala" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><use href="#pin-icon"/></svg>
+          View Location on Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== COUPLES / OUR STORY ============== -->
+<section id="unions">
+  <div class="container">
+    <p class="eyebrow reveal">Our Story</p>
+    <h2 class="section-title reveal">A Joint Celebration of Two Unions</h2>
+    <p class="story-lead reveal reveal-1">Two beloved couples, bound by family and faith, beginning their forever on the very same blessed day.</p>
+
+    <svg class="motif" viewBox="0 0 200 200" style="width:56px;height:56px;margin:34px auto 0;display:block;"><use href="#motif-rosette"/></svg>
+
+    <div class="couples-grid">
+      <div class="couple-card glass corner-frame reveal reveal-2">
+        <div class="ci-wrap"><svg viewBox="0 0 220 230" style="color:var(--gold-400)"><use href="#couple-icon"/></svg></div>
+        <h3 class="cc-names">Musfir &amp; Fasna</h3>
+        <p class="cc-full">Musfir Pullat &amp; Fasna Machingal</p>
+        <p class="cc-tag">"A union written in patience and grace."</p>
+      </div>
+
+      <div class="couple-card glass corner-frame maroon-accent reveal reveal-3">
+        <div class="ci-wrap"><svg viewBox="0 0 220 230" style="color:var(--maroon-500)"><use href="#couple-icon"/></svg></div>
+        <h3 class="cc-names">Fasil &amp; Rinshana</h3>
+        <p class="cc-full">Fasil Pullat &amp; Fathima Rinshana</p>
+        <p class="cc-tag">"Two souls, one beautiful new beginning."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== RSVP ============== -->
+<section id="rsvp">
+  <div class="container">
+    <p class="eyebrow reveal">Kindly Respond</p>
+    <h2 class="section-title reveal">Your Presence Is Our Greatest Blessing</h2>
+    <p class="story-lead reveal reveal-1">Please let us know if you'll be joining the celebration — we would love to have you there.</p>
+
+    <form class="rsvp-card glass corner-frame reveal reveal-2" id="rsvpForm" novalidate>
+
+      <div class="field">
+        <label for="guestName">Guest Name</label>
+        <input type="text" id="guestName" name="guestName" placeholder="Your full name" required>
+      </div>
+
+      <div class="field">
+        <label for="guestContact">Contact Number</label>
+        <input type="tel" id="guestContact" name="guestContact" placeholder="e.g. +91 98765 43210" required>
+      </div>
+
+      <div class="field">
+        <span class="group-label">Joyfully attending the celebration of</span>
+        <div class="pill-row" id="coupleGroup">
+          <label class="pill"><input type="radio" name="couple" value="Musfir & Fasna" required><span>Musfir &amp; Fasna</span></label>
+          <label class="pill"><input type="radio" name="couple" value="Fasil & Rinshana"><span>Fasil &amp; Rinshana</span></label>
+          <label class="pill"><input type="radio" name="couple" value="Both Couples"><span>Both Couples</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="group-label">Attendance RSVP</span>
+        <div class="pill-row" id="attendanceGroup">
+          <label class="pill"><input type="radio" name="attendance" value="Will Attend" required><span>Will Attend</span></label>
+          <label class="pill"><input type="radio" name="attendance" value="Unable to Attend"><span>Unable to Attend</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="guestCount">Number of Guests Accompanying</label>
+        <select id="guestCount" name="guestCount">
+          <option value="0">Just me</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5+">5+</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="wishes">Send Blessings &amp; Warm Wishes</label>
+        <textarea id="wishes" name="wishes" placeholder="Write your blessings for the couples..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submitBtn">
+        <span class="wave-ring"></span>
+        <span>Send Our RSVP</span>
+      </button>
+
+      <p class="form-note">This invitation is a personal keepsake — your RSVP is shared directly with the families.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <svg class="foot-motif motif" viewBox="0 0 200 200"><use href="#motif-rosette"/></svg>
+  <p class="foot-line">With heartfelt love and gratitude,</p>
+  <p class="foot-families">The Pullat, Machingal &amp; Rinshana Families</p>
+  <p class="foot-fine">Musfir &amp; Fasna · Fasil &amp; Rinshana — 23.07.2026 · Crafted with love as a digital keepsake</p>
+</footer>
+
+<!-- ============== RSVP CONFIRMATION MODAL ============== -->
+<div class="modal-overlay" id="rsvpModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box glass corner-frame">
+    <svg viewBox="0 0 200 200" class="motif draw-now" style="color:var(--gold-400)"><use href="#motif-rosette"/></svg>
+    <h3 class="modal-title gold-text" id="modalTitle">Jazakallah Khair</h3>
+    <p class="modal-text">Your RSVP has been received with love. We can't wait to celebrate this joyous day with you. 🤍</p>
+    <button class="modal-close" id="modalClose">Close</button>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   KINETIC TEXT SPLIT
+   ============================================================ */
+function kineticSplit(el){
+  const words = el.textContent.trim().split(/\s+/);
+  el.textContent = '';
+  words.forEach((w, i) => {
+    const span = document.createElement('span');
+    span.className = 'word';
+    span.style.setProperty('--d', i);
+    span.style.animationDelay = (i * 0.045 + 0.2) + 's';
+    span.textContent = w + '\u00A0';
+    el.appendChild(span);
+  });
+}
+document.querySelectorAll('[data-kinetic]').forEach(kineticSplit);
+document.getElementById('hero').classList.add('in-view'); // hero plays immediately on load
+
+/* ============================================================
+   SCROLL REVEAL (IntersectionObserver)
+   ============================================================ */
+const revealTargets = document.querySelectorAll('.reveal, .motif:not(.draw-now)');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible', 'in-view');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.18, rootMargin: '0px 0px -40px 0px' });
+revealTargets.forEach(el => revealObserver.observe(el));
+
+/* ============================================================
+   NAV SCROLL STATE
+   ============================================================ */
+const nav = document.getElementById('siteNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+/* ============================================================
+   COUNTDOWN — target: 23 July 2026, 00:00 IST
+   ============================================================ */
+const weddingDate = new Date('2026-07-23T00:00:00+05:30').getTime();
+function pad(n){ return String(n).padStart(2, '0'); }
+function updateCountdown(){
+  const diff = Math.max(weddingDate - Date.now(), 0);
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-days').textContent = pad(d);
+  document.getElementById('cd-hours').textContent = pad(h);
+  document.getElementById('cd-mins').textContent = pad(m);
+  document.getElementById('cd-secs').textContent = pad(s);
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* ============================================================
+   HERO PARALLAX MOTIF (desktop pointer only)
+   ============================================================ */
+const heroMotif = document.querySelector('.hero-motif');
+const heroSection = document.getElementById('hero');
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (window.matchMedia('(pointer: fine)').matches && !prefersReduced) {
+  heroSection.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 26;
+    const y = (e.clientY / window.innerHeight - 0.5) * 26;
+    heroMotif.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+  });
+}
+
+/* ============================================================
+   FLOATING GOLD DUST PARTICLES (canvas)
+   ============================================================ */
+(function particles(){
+  const canvas = document.getElementById('dust-canvas');
+  const ctx = canvas.getContext('2d');
+  let particlesArr = [];
+  let w, h;
+
+  function resize(){
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const count = window.innerWidth < 700 ? 28 : 55;
+  function spawn(){
+    particlesArr = Array.from({ length: count }, () => ({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      r: Math.random() * 1.8 + 0.5,
+      vy: Math.random() * 0.25 + 0.06,
+      vx: (Math.random() - 0.5) * 0.18,
+      a: Math.random() * 0.5 + 0.15,
+      twinkle: Math.random() * 0.02 + 0.005,
+      dir: Math.random() > 0.5 ? 1 : -1
+    }));
+  }
+  spawn();
+
+  if (prefersReduced) {
+    // draw a single static frame and stop — respects reduced-motion preference
+    ctx.fillStyle = 'rgba(212,175,55,0.5)';
+    particlesArr.forEach(p => { ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill(); });
+    return;
+  }
+
+  function tick(){
+    ctx.clearRect(0, 0, w, h);
+    particlesArr.forEach(p => {
+      p.y -= p.vy;
+      p.x += p.vx;
+      p.a += p.twinkle * p.dir;
+      if (p.a > 0.65 || p.a < 0.1) p.dir *= -1;
+      if (p.y < -10) { p.y = h + 10; p.x = Math.random() * w; }
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(212,175,55,${p.a})`;
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+
+/* ============================================================
+   PILL RADIO STATE (visual sync + fallback for :has())
+   ============================================================ */
+document.querySelectorAll('.pill-row').forEach(group => {
+  group.addEventListener('change', (e) => {
+    if (e.target.matches('input[type="radio"]')) {
+      const name = e.target.name;
+      group.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+        r.closest('.pill').classList.toggle('is-checked', r.checked);
+      });
+    }
+  });
+});
+
+/* ============================================================
+   RSVP FORM SUBMISSION (front-end only — no backend wired)
+   ============================================================ */
+const rsvpForm = document.getElementById('rsvpForm');
+const submitBtn = document.getElementById('submitBtn');
+const modal = document.getElementById('rsvpModal');
+const modalClose = document.getElementById('modalClose');
+
+rsvpForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const couple = rsvpForm.querySelector('input[name="couple"]:checked');
+  const attendance = rsvpForm.querySelector('input[name="attendance"]:checked');
+
+  if (!rsvpForm.guestName.value.trim() || !rsvpForm.guestContact.value.trim() || !couple || !attendance) {
+    rsvpForm.reportValidity();
+    return;
+  }
+
+  // NOTE: static HTML reference — the live site uses Next.js API at /api/rsvp.
+  const payload = {
+    name: rsvpForm.guestName.value.trim(),
+    contact: rsvpForm.guestContact.value.trim(),
+    couple: couple.value,
+    attendance: attendance.value,
+    guests: rsvpForm.guestCount.value,
+    wishes: rsvpForm.wishes.value.trim()
+  };
+  console.log('RSVP submitted:', payload);
+
+  submitBtn.classList.add('firing');
+
+  setTimeout(() => {
+    modal.classList.add('open');
+    submitBtn.classList.remove('firing');
+    rsvpForm.reset();
+    rsvpForm.querySelectorAll('.pill.is-checked').forEach(p => p.classList.remove('is-checked'));
+  }, 650);
+});
+
+modalClose.addEventListener('click', () => modal.classList.remove('open'));
+modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') modal.classList.remove('open'); });
+</script>
+</body>
+</html>
