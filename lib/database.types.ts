@@ -13,35 +13,17 @@ export interface Database {
         Row: {
           id: string;
           created_at: string;
-          name: string;
-          contact: string;
-          couple: string;
           attendance: string;
-          guest_count: string;
-          wishes: string | null;
-          notified: boolean;
         };
         Insert: {
           id?: string;
           created_at?: string;
-          name: string;
-          contact: string;
-          couple: string;
           attendance: string;
-          guest_count?: string;
-          wishes?: string | null;
-          notified?: boolean;
         };
         Update: {
           id?: string;
           created_at?: string;
-          name?: string;
-          contact?: string;
-          couple?: string;
           attendance?: string;
-          guest_count?: string;
-          wishes?: string | null;
-          notified?: boolean;
         };
         Relationships: [];
       };

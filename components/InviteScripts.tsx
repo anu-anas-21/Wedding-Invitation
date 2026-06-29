@@ -171,10 +171,19 @@ export function initInvitePage(): () => void {
     cleanups.push(() => group.removeEventListener('change', onChange));
   });
 
-  const rsvpForm = document.getElementById('rsvpForm') as HTMLFormElement | null;
-  const submitBtn = document.getElementById('submitBtn');
+  const RSVP_STORAGE_KEY = 'musfi-rsvp-response';
+  const choiceBtns = document.querySelectorAll<HTMLButtonElement>('.rsvp-choice');
   const modal = document.getElementById('rsvpModal');
   const modalClose = document.getElementById('modalClose');
+  const modalText = document.getElementById('modalText');
+
+  const savedResponse = localStorage.getItem(RSVP_STORAGE_KEY);
+  if (savedResponse) {
+    choiceBtns.forEach((btn) => {
+      if (btn.dataset.attendance === savedResponse) btn.classList.add('is-selected');
+      btn.disabled = true;
+    });
+  }
 
   const closeModal = () => modal?.classList.remove('open');
 
@@ -194,68 +203,62 @@ export function initInvitePage(): () => void {
     document.removeEventListener('keydown', onKeyDown);
   });
 
-  const onSubmit = async (e: Event) => {
-    e.preventDefault();
-    if (!rsvpForm) return;
+  const submitRsvp = async (attendance: string, btn: HTMLButtonElement) => {
+    if (btn.disabled) return;
 
-    const couple = rsvpForm.querySelector<HTMLInputElement>('input[name="couple"]:checked');
-    const attendance = rsvpForm.querySelector<HTMLInputElement>('input[name="attendance"]:checked');
-    const guestName = rsvpForm.elements.namedItem('guestName') as HTMLInputElement;
-    const guestContact = rsvpForm.elements.namedItem('guestContact') as HTMLInputElement;
-    const guestCount = rsvpForm.elements.namedItem('guestCount') as HTMLSelectElement;
-    const wishes = rsvpForm.elements.namedItem('wishes') as HTMLTextAreaElement;
-
-    if (!guestName.value.trim() || !guestContact.value.trim() || !couple || !attendance) {
-      rsvpForm.reportValidity();
-      return;
-    }
-
-    submitBtn?.classList.add('firing');
-
-    const payload = {
-      name: guestName.value.trim(),
-      contact: guestContact.value.trim(),
-      couple: couple.value,
-      attendance: attendance.value,
-      guests: guestCount.value,
-      wishes: wishes.value.trim(),
-    };
+    choiceBtns.forEach((b) => {
+      b.disabled = true;
+    });
+    btn.classList.add('firing');
 
     try {
       const res = await fetch('/api/rsvp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: payload.name,
-          contact: payload.contact,
-          couple: payload.couple,
-          attendance: payload.attendance,
-          guest_count: payload.guests,
-          wishes: payload.wishes || undefined,
-        }),
+        body: JSON.stringify({ attendance }),
       });
 
       const data = (await res.json()) as { success?: boolean; error?: string };
       if (!res.ok || data.error) {
-        submitBtn?.classList.remove('firing');
-        alert(data.error ?? 'Unable to submit your RSVP. Please try again.');
+        choiceBtns.forEach((b) => {
+          b.disabled = Boolean(localStorage.getItem(RSVP_STORAGE_KEY));
+        });
+        btn.classList.remove('firing');
+        alert(data.error ?? 'Unable to save your response. Please try again.');
         return;
+      }
+
+      localStorage.setItem(RSVP_STORAGE_KEY, attendance);
+
+      if (modalText) {
+        modalText.textContent =
+          attendance === 'Will come'
+            ? "Thank you! We can't wait to celebrate this joyous day with you. 🤍"
+            : 'Thank you for letting us know. You will be in our prayers. 🤍';
       }
 
       window.setTimeout(() => {
         modal?.classList.add('open');
-        submitBtn?.classList.remove('firing');
-        rsvpForm.reset();
-        rsvpForm.querySelectorAll('.pill.is-checked').forEach((p) => p.classList.remove('is-checked'));
-      }, 650);
+        btn.classList.remove('firing');
+        btn.classList.add('is-selected');
+      }, 400);
     } catch {
-      submitBtn?.classList.remove('firing');
-      alert('Unable to submit your RSVP. Please check your connection and try again.');
+      choiceBtns.forEach((b) => {
+        b.disabled = Boolean(localStorage.getItem(RSVP_STORAGE_KEY));
+      });
+      btn.classList.remove('firing');
+      alert('Unable to save your response. Please check your connection and try again.');
     }
   };
 
-  rsvpForm?.addEventListener('submit', onSubmit);
-  cleanups.push(() => rsvpForm?.removeEventListener('submit', onSubmit));
+  choiceBtns.forEach((btn) => {
+    const onClick = () => {
+      const attendance = btn.dataset.attendance;
+      if (attendance) submitRsvp(attendance, btn);
+    };
+    btn.addEventListener('click', onClick);
+    cleanups.push(() => btn.removeEventListener('click', onClick));
+  });
 
   return () => cleanups.forEach((fn) => fn());
 }

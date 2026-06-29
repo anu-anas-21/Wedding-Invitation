@@ -172,10 +172,14 @@ export default function InviteWebsite() {
 
           <div className="couples-grid">
             <div className="couple-card glass corner-frame reveal reveal-2">
-              <div className="ci-wrap">
-                <svg viewBox="0 0 220 230" style={{ color: 'var(--gold-400)' }}>
-                  <use href="#couple-icon" />
-                </svg>
+              <div className="ci-wrap ci-wrap--blend">
+                <img
+                  className="couple-photo"
+                  src="/images/musfir-fasna.png"
+                  alt="Musfir and Fasna"
+                  width={220}
+                  height={260}
+                />
               </div>
               <h3 className="cc-names">Musfir &amp; Fasna</h3>
               <p className="cc-full">Musfir Pullat &amp; Fasna Machingal</p>
@@ -183,10 +187,14 @@ export default function InviteWebsite() {
             </div>
 
             <div className="couple-card glass corner-frame maroon-accent reveal reveal-3">
-              <div className="ci-wrap">
-                <svg viewBox="0 0 220 230" style={{ color: 'var(--maroon-500)' }}>
-                  <use href="#couple-icon" />
-                </svg>
+              <div className="ci-wrap ci-wrap--blend">
+                <img
+                  className="couple-photo"
+                  src="/images/fasil-rinshana.png"
+                  alt="Fasil and Rinshana"
+                  width={220}
+                  height={260}
+                />
               </div>
               <h3 className="cc-names">Fasil &amp; Rinshana</h3>
               <p className="cc-full">Fasil Pullat &amp; Fathima Rinshana</p>
@@ -205,92 +213,24 @@ export default function InviteWebsite() {
             there.
           </p>
 
-          <form className="rsvp-card glass corner-frame reveal reveal-2" id="rsvpForm" noValidate>
-            <div className="field">
-              <label htmlFor="guestName">Guest Name</label>
-              <input
-                type="text"
-                id="guestName"
-                name="guestName"
-                placeholder="Your full name"
-                required
-              />
+          <div className="rsvp-simple glass corner-frame reveal reveal-2" id="rsvpSection">
+            <p className="rsvp-simple-label">Will you be joining us on this blessed day?</p>
+            <div className="rsvp-choice-row">
+              <button type="button" className="rsvp-choice rsvp-choice--yes" data-attendance="Will come">
+                Will come
+              </button>
+              <button
+                type="button"
+                className="rsvp-choice rsvp-choice--no"
+                data-attendance="Will not come"
+              >
+                Will not come
+              </button>
             </div>
-
-            <div className="field">
-              <label htmlFor="guestContact">Contact Number</label>
-              <input
-                type="tel"
-                id="guestContact"
-                name="guestContact"
-                placeholder="e.g. +91 98765 43210"
-                required
-              />
-            </div>
-
-            <div className="field">
-              <span className="group-label">Joyfully attending the celebration of</span>
-              <div className="pill-row" id="coupleGroup">
-                <label className="pill">
-                  <input type="radio" name="couple" value="Musfir & Fasna" required />
-                  <span>Musfir &amp; Fasna</span>
-                </label>
-                <label className="pill">
-                  <input type="radio" name="couple" value="Fasil & Rinshana" />
-                  <span>Fasil &amp; Rinshana</span>
-                </label>
-                <label className="pill">
-                  <input type="radio" name="couple" value="Both Couples" />
-                  <span>Both Couples</span>
-                </label>
-              </div>
-            </div>
-
-            <div className="field">
-              <span className="group-label">Attendance RSVP</span>
-              <div className="pill-row" id="attendanceGroup">
-                <label className="pill">
-                  <input type="radio" name="attendance" value="Will Attend" required />
-                  <span>Will Attend</span>
-                </label>
-                <label className="pill">
-                  <input type="radio" name="attendance" value="Unable to Attend" />
-                  <span>Unable to Attend</span>
-                </label>
-              </div>
-            </div>
-
-            <div className="field">
-              <label htmlFor="guestCount">Number of Guests Accompanying</label>
-              <select id="guestCount" name="guestCount" defaultValue="0">
-                <option value="0">Just me</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5+">5+</option>
-              </select>
-            </div>
-
-            <div className="field">
-              <label htmlFor="wishes">Send Blessings &amp; Warm Wishes</label>
-              <textarea
-                id="wishes"
-                name="wishes"
-                placeholder="Write your blessings for the couples..."
-              />
-            </div>
-
-            <button type="submit" className="btn-submit" id="submitBtn">
-              <span className="wave-ring" />
-              <span>Send Our RSVP</span>
-            </button>
-
             <p className="form-note">
-              This invitation is a personal keepsake — your RSVP is shared directly with the
-              families.
+              Tap your response — it is shared directly with the families.
             </p>
-          </form>
+          </div>
         </div>
       </section>
 
@@ -324,9 +264,8 @@ export default function InviteWebsite() {
           <h3 className="modal-title gold-text" id="modalTitle">
             Jazakallah Khair
           </h3>
-          <p className="modal-text">
-            Your RSVP has been received with love. We can&apos;t wait to celebrate this joyous day
-            with you. 🤍
+          <p className="modal-text" id="modalText">
+            Thank you for your response. 🤍
           </p>
           <button type="button" className="modal-close" id="modalClose">
             Close
