@@ -172,13 +172,13 @@ export default function InviteWebsite() {
 
           <div className="couples-grid">
             <div className="couple-card glass corner-frame reveal reveal-2">
-              <div className="ci-wrap ci-wrap--blend">
+              <div className="ci-wrap">
                 <img
                   className="couple-photo"
-                  src="/images/musfir-fasna.png"
+                  src="/images/photo-musfi.png"
                   alt="Musfir and Fasna"
-                  width={220}
-                  height={260}
+                  width={240}
+                  height={280}
                 />
               </div>
               <h3 className="cc-names">Musfir &amp; Fasna</h3>
@@ -187,13 +187,13 @@ export default function InviteWebsite() {
             </div>
 
             <div className="couple-card glass corner-frame maroon-accent reveal reveal-3">
-              <div className="ci-wrap ci-wrap--blend">
+              <div className="ci-wrap">
                 <img
                   className="couple-photo"
-                  src="/images/fasil-rinshana.png"
+                  src="/images/photo-rockey.png"
                   alt="Fasil and Rinshana"
-                  width={220}
-                  height={260}
+                  width={240}
+                  height={280}
                 />
               </div>
               <h3 className="cc-names">Fasil &amp; Rinshana</h3>

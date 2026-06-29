@@ -343,8 +343,8 @@ section{ position: relative; padding: 120px 0; }
 .couples-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 36px; max-width: 980px; margin: 60px auto 0; }
 .couple-card{ padding: 46px 34px 38px; text-align: center; }
 .couple-card .ci-wrap{
-  width: 220px;
-  height: 260px;
+  width: 240px;
+  height: 280px;
   margin: 0 auto 22px;
   display: flex;
   align-items: flex-end;
@@ -357,10 +357,6 @@ section{ position: relative; padding: 120px 0; }
   object-fit: contain;
   object-position: center bottom;
   display: block;
-}
-.couple-card .ci-wrap--blend img.couple-photo{
-  mix-blend-mode: lighten;
-  filter: contrast(1.04) saturate(1.06);
 }
 .couple-card .cc-names{ font-family: var(--font-display); font-weight: 700; font-size: clamp(22px,3vw,28px); margin-bottom: 10px; }
 .couple-card .cc-full{ font-size: 13.5px; letter-spacing: .03em; color: rgba(248,242,230,.6); margin-bottom: 16px; }

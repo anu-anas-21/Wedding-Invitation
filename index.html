@@ -362,15 +362,12 @@ section{ position: relative; padding: 120px 0; }
 .couples-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 36px; max-width: 980px; margin: 60px auto 0; }
 .couple-card{ padding: 46px 34px 38px; text-align: center; }
 .couple-card .ci-wrap{
-  width: 220px; height: 260px; margin: 0 auto 22px;
+  width: 240px; height: 280px; margin: 0 auto 22px;
   display: flex; align-items: flex-end; justify-content: center;
 }
 .couple-card .ci-wrap svg{ width: 100%; height: 100%; }
 .couple-card .ci-wrap img.couple-photo{
   width: 100%; height: 100%; object-fit: contain; object-position: center bottom; display: block;
-}
-.couple-card .ci-wrap--blend img.couple-photo{
-  mix-blend-mode: lighten; filter: contrast(1.04) saturate(1.06);
 }
 .couple-card .cc-names{ font-family: var(--font-display); font-weight: 700; font-size: clamp(22px,3vw,28px); margin-bottom: 10px; }
 .couple-card .cc-full{ font-size: 13.5px; letter-spacing: .03em; color: rgba(248,242,230,.6); margin-bottom: 16px; }
@@ -687,8 +684,8 @@ footer .foot-fine{ font-size: 11.5px; letter-spacing: .05em; color: rgba(248,242
 
     <div class="couples-grid">
       <div class="couple-card glass corner-frame reveal reveal-2">
-        <div class="ci-wrap ci-wrap--blend">
-          <img class="couple-photo" src="public/images/musfir-fasna.png" alt="Musfir and Fasna" width="220" height="260">
+        <div class="ci-wrap">
+          <img class="couple-photo" src="public/images/photo-musfi.png" alt="Musfir and Fasna" width="240" height="280">
         </div>
         <h3 class="cc-names">Musfir &amp; Fasna</h3>
         <p class="cc-full">Musfir Pullat &amp; Fasna Machingal</p>
@@ -696,8 +693,8 @@ footer .foot-fine{ font-size: 11.5px; letter-spacing: .05em; color: rgba(248,242
       </div>
 
       <div class="couple-card glass corner-frame maroon-accent reveal reveal-3">
-        <div class="ci-wrap ci-wrap--blend">
-          <img class="couple-photo" src="public/images/fasil-rinshana.png" alt="Fasil and Rinshana" width="220" height="260">
+        <div class="ci-wrap">
+          <img class="couple-photo" src="public/images/photo-rockey.png" alt="Fasil and Rinshana" width="240" height="280">
         </div>
         <h3 class="cc-names">Fasil &amp; Rinshana</h3>
         <p class="cc-full">Fasil Pullat &amp; Fathima Rinshana</p>
@@ -888,43 +885,65 @@ document.querySelectorAll('.pill-row').forEach(group => {
 });
 
 /* ============================================================
-   RSVP FORM SUBMISSION (front-end only — no backend wired)
+   RSVP — Will come / Will not come
    ============================================================ */
-const rsvpForm = document.getElementById('rsvpForm');
-const submitBtn = document.getElementById('submitBtn');
+const RSVP_STORAGE_KEY = 'musfi-rsvp-response';
+const choiceBtns = document.querySelectorAll('.rsvp-choice');
 const modal = document.getElementById('rsvpModal');
 const modalClose = document.getElementById('modalClose');
+const modalText = document.getElementById('modalText');
 
-rsvpForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+const savedResponse = localStorage.getItem(RSVP_STORAGE_KEY);
+if (savedResponse) {
+  choiceBtns.forEach(btn => {
+    if (btn.dataset.attendance === savedResponse) btn.classList.add('is-selected');
+    btn.disabled = true;
+  });
+}
 
-  const couple = rsvpForm.querySelector('input[name="couple"]:checked');
-  const attendance = rsvpForm.querySelector('input[name="attendance"]:checked');
+const closeModal = () => modal.classList.remove('open');
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-  if (!rsvpForm.guestName.value.trim() || !rsvpForm.guestContact.value.trim() || !couple || !attendance) {
-    rsvpForm.reportValidity();
-    return;
+async function submitRsvp(attendance, btn) {
+  if (btn.disabled) return;
+  choiceBtns.forEach(b => { b.disabled = true; });
+  btn.classList.add('firing');
+
+  try {
+    const res = await fetch('/api/rsvp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ attendance }),
+    });
+    const data = await res.json();
+    if (!res.ok || data.error) {
+      choiceBtns.forEach(b => { b.disabled = Boolean(localStorage.getItem(RSVP_STORAGE_KEY)); });
+      btn.classList.remove('firing');
+      alert(data.error || 'Unable to save your response. Please try again.');
+      return;
+    }
+    localStorage.setItem(RSVP_STORAGE_KEY, attendance);
+    if (modalText) {
+      modalText.textContent = attendance === 'Will come'
+        ? "Thank you! We can't wait to celebrate this joyous day with you. 🤍"
+        : 'Thank you for letting us know. You will be in our prayers. 🤍';
+    }
+    setTimeout(() => {
+      modal.classList.add('open');
+      btn.classList.remove('firing');
+      btn.classList.add('is-selected');
+    }, 400);
+  } catch {
+    choiceBtns.forEach(b => { b.disabled = Boolean(localStorage.getItem(RSVP_STORAGE_KEY)); });
+    btn.classList.remove('firing');
+    alert('Unable to save your response. Please check your connection and try again.');
   }
+}
 
-  // NOTE: static HTML reference — the live site uses Next.js API at /api/rsvp.
-  const payload = {
-    name: rsvpForm.guestName.value.trim(),
-    contact: rsvpForm.guestContact.value.trim(),
-    couple: couple.value,
-    attendance: attendance.value,
-    guests: rsvpForm.guestCount.value,
-    wishes: rsvpForm.wishes.value.trim()
-  };
-  console.log('RSVP submitted:', payload);
-
-  submitBtn.classList.add('firing');
-
-  setTimeout(() => {
-    modal.classList.add('open');
-    submitBtn.classList.remove('firing');
-    rsvpForm.reset();
-    rsvpForm.querySelectorAll('.pill.is-checked').forEach(p => p.classList.remove('is-checked'));
-  }, 650);
+choiceBtns.forEach(btn => {
+  btn.addEventListener('click', () => submitRsvp(btn.dataset.attendance, btn));
 });
 
 modalClose.addEventListener('click', () => modal.classList.remove('open'));
