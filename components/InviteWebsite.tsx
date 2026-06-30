@@ -173,7 +173,7 @@ export default function InviteWebsite() {
               <div className="ci-wrap">
                 <img
                   className="couple-photo"
-                  src="/images/musfir-fasna.png"
+                  src="/images/musfir-fasna.png?v=3"
                   alt="Musfir and Fasna"
                   width={432}
                   height={577}
@@ -192,7 +192,7 @@ export default function InviteWebsite() {
               <div className="ci-wrap">
                 <img
                   className="couple-photo"
-                  src="/images/fasil-rinshana.png"
+                  src="/images/fasil-rinshana.png?v=3"
                   alt="Fasil and Rinshana"
                   width={432}
                   height={577}

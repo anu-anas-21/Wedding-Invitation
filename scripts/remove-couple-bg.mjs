@@ -4,24 +4,16 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
-
-const assetDir =
-  'C:\\Users\\Krishna\\.cursor\\projects\\c-Musfi-Wedding-Page\\assets';
+const imagesDir = path.join(root, 'public/images');
 
 const pairs = [
   {
-    input: path.join(
-      assetDir,
-      'c__Users_Krishna_AppData_Roaming_Cursor_User_workspaceStorage_3e67aa65c6ba697027b201bc447a1f89_images_Musffir_image-dae67838-098a-4687-a8de-06f2f0694430.png',
-    ),
-    output: path.join(root, 'public/images/musfir-fasna.png'),
+    input: path.join(imagesDir, 'musfir-fasna.png'),
+    output: path.join(imagesDir, 'musfir-fasna.png'),
   },
   {
-    input: path.join(
-      assetDir,
-      'c__Users_Krishna_AppData_Roaming_Cursor_User_workspaceStorage_3e67aa65c6ba697027b201bc447a1f89_images_Rockey_image-a9a1976e-6116-44e0-821c-d42b72bd54bc.png',
-    ),
-    output: path.join(root, 'public/images/fasil-rinshana.png'),
+    input: path.join(imagesDir, 'fasil-rinshana.png'),
+    output: path.join(imagesDir, 'fasil-rinshana.png'),
   },
 ];
 
@@ -31,8 +23,10 @@ function isBackgroundPixel(r, g, b) {
   const min = Math.min(r, g, b);
   const sat = max === 0 ? 0 : (max - min) / max;
 
-  if (lum >= 238 && sat <= 0.12) return true;
-  if (r >= 188 && g >= 188 && b >= 188 && Math.abs(r - g) <= 10 && Math.abs(g - b) <= 10) {
+  // White / off-white studio background
+  if (lum >= 232 && sat <= 0.14) return true;
+  // Light gray checkerboard export artifacts
+  if (r >= 185 && g >= 185 && b >= 185 && Math.abs(r - g) <= 12 && Math.abs(g - b) <= 12) {
     return true;
   }
   return false;
@@ -98,7 +92,8 @@ async function processImage({ input, output }) {
   await fs.copyFile(temp, output);
   await fs.unlink(temp);
 
-  console.log(`Processed ${path.basename(output)} (${info.width}x${info.height})`);
+  const meta = await sharp(output).metadata();
+  console.log(`Processed ${path.basename(output)} (${info.width}x${info.height}, alpha=${meta.hasAlpha})`);
 }
 
 for (const pair of pairs) {
