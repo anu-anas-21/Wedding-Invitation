@@ -343,11 +343,11 @@ section{ position: relative; padding: 120px 0; }
 .couples-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 36px; max-width: 980px; margin: 60px auto 0; }
 .couple-card{ padding: 46px 34px 38px; text-align: center; }
 .couple-card .ci-wrap{
-  width: 260px;
-  height: 300px;
-  margin: 0 auto 22px;
+  width: min(88%, 248px);
+  aspect-ratio: 3 / 4;
+  margin: 0 auto 18px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 .couple-card .ci-wrap svg{ width: 100%; height: 100%; }
@@ -355,8 +355,9 @@ section{ position: relative; padding: 120px 0; }
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center center;
+  object-position: center bottom;
   display: block;
+  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.35));
 }
 .couple-card .cc-names{
   font-family: var(--font-display);

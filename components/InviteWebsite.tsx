@@ -126,9 +126,7 @@ export default function InviteWebsite() {
               <span className="venue-date">23 July 2026</span>
             </div>
             <p className="venue-note">
-              An evening of blessings, joy and celebration, shared together with family and
-              friends. Detailed timing will follow closer to the date — we can&apos;t wait to host
-              you.
+              We would be delighted if you could join us for a day of celebrations, good company, and cherished moments with family and friends.
             </p>
             <div className="venue-actions">
               <a className="btn-map" href="/api/calendar" download="musfi-wedding-save-the-date.ics">
@@ -177,8 +175,8 @@ export default function InviteWebsite() {
                   className="couple-photo"
                   src="/images/photo-musfi.png"
                   alt="Musfir and Fasna"
-                  width={260}
-                  height={300}
+                  width={768}
+                  height={1024}
                 />
               </div>
               <h3 className="cc-names cc-gold">Musfir &amp; Fasna</h3>
@@ -192,8 +190,8 @@ export default function InviteWebsite() {
                   className="couple-photo"
                   src="/images/photo-rockey.png"
                   alt="Fasil and Rinshana"
-                  width={260}
-                  height={300}
+                  width={768}
+                  height={1024}
                 />
               </div>
               <h3 className="cc-names cc-gold">Fasil &amp; Rinshana</h3>
@@ -239,7 +237,7 @@ export default function InviteWebsite() {
           <use href="#motif-rosette" />
         </svg>
         <p className="foot-line">With heartfelt love and gratitude,</p>
-        <p className="foot-families">The Pullat Families</p>
+        <p className="foot-families">The Pullat Family.</p>
         <p className="foot-fine">
           Musfir &amp; Fasna · Fasil &amp; Rinshana — 23.07.2026 · Crafted with love as a digital
           keepsake
