@@ -359,19 +359,25 @@ section{ position: relative; padding: 120px 0; }
 /* ============================================================
    6. COUPLES / OUR STORY
    ============================================================ */
-.couples-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 36px; max-width: 980px; margin: 60px auto 0; }
-.couple-card{ padding: 46px 34px 38px; text-align: center; }
+.couples-grid{
+  display: grid; grid-template-columns: 1fr 1fr; gap: 36px; max-width: 980px; margin: 60px auto 0;
+  align-items: stretch;
+}
+.couple-card{
+  padding: 40px 28px 36px; text-align: center;
+  display: flex; flex-direction: column; align-items: center;
+}
 .couple-card .ci-wrap{
-  width: min(88%, 248px);
-  aspect-ratio: 3 / 4;
-  margin: 0 auto 18px;
-  display: flex; align-items: flex-end; justify-content: center;
+  width: min(100%, 258px); height: 308px; flex: 0 0 308px; margin: 0;
+  display: flex; align-items: flex-end; justify-content: center; overflow: hidden;
 }
 .couple-card .ci-wrap svg{ width: 100%; height: 100%; }
 .couple-card .ci-wrap img.couple-photo{
-  width: 100%; height: 100%; object-fit: contain; object-position: center bottom; display: block;
-  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.35));
+  max-width: 100%; max-height: 100%; width: auto; height: auto;
+  object-fit: contain; object-position: center bottom; display: block;
+  filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.32));
 }
+.couple-card .cc-copy{ width: 100%; margin-top: 20px; flex: 1; }
 .couple-card .cc-names{ font-family: var(--font-display); font-weight: 700; font-size: clamp(22px,3vw,28px); margin-bottom: 10px; }
 .couple-card .cc-full{ font-size: 13.5px; letter-spacing: .03em; margin-bottom: 16px; }
 .couple-card .cc-tag{ font-family: var(--font-accent); font-style: italic; font-size: 15.5px; }
@@ -694,20 +700,24 @@ footer .foot-fine{ font-size: 11.5px; letter-spacing: .05em; color: rgba(248,242
     <div class="couples-grid">
       <div class="couple-card glass corner-frame reveal reveal-2">
         <div class="ci-wrap">
-          <img class="couple-photo" src="public/images/photo-musfi.png" alt="Musfir and Fasna" width="768" height="1024">
+          <img class="couple-photo" src="public/images/photo-musfi.png" alt="Musfir and Fasna" width="767" height="1024" loading="eager" decoding="async">
         </div>
-        <h3 class="cc-names cc-gold">Musfir &amp; Fasna</h3>
-        <p class="cc-full cc-gold">Musfir Pullat &amp; Fasna Machingal</p>
-        <p class="cc-tag cc-gold">"A union written in patience and grace."</p>
+        <div class="cc-copy">
+          <h3 class="cc-names cc-gold">Musfir &amp; Fasna</h3>
+          <p class="cc-full cc-gold">Musfir Pullat &amp; Fasna Machingal</p>
+          <p class="cc-tag cc-gold">"A union written in patience and grace."</p>
+        </div>
       </div>
 
       <div class="couple-card glass corner-frame maroon-accent reveal reveal-3">
         <div class="ci-wrap">
-          <img class="couple-photo" src="public/images/photo-rockey.png" alt="Fasil and Rinshana" width="768" height="1024">
+          <img class="couple-photo" src="public/images/photo-rockey.png" alt="Fasil and Rinshana" width="767" height="1024" loading="eager" decoding="async">
         </div>
-        <h3 class="cc-names cc-gold">Fasil &amp; Rinshana</h3>
-        <p class="cc-full cc-gold">Fasil Pullat &amp; Fathima Rinshana</p>
-        <p class="cc-tag cc-gold">"Two souls, one beautiful new beginning."</p>
+        <div class="cc-copy">
+          <h3 class="cc-names cc-gold">Fasil &amp; Rinshana</h3>
+          <p class="cc-full cc-gold">Fasil Pullat &amp; Fathima Rinshana</p>
+          <p class="cc-tag cc-gold">"Two souls, one beautiful new beginning."</p>
+        </div>
       </div>
     </div>
   </div>

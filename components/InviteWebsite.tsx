@@ -175,13 +175,17 @@ export default function InviteWebsite() {
                   className="couple-photo"
                   src="/images/photo-musfi.png"
                   alt="Musfir and Fasna"
-                  width={768}
+                  width={767}
                   height={1024}
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
-              <h3 className="cc-names cc-gold">Musfir &amp; Fasna</h3>
-              <p className="cc-full cc-gold">Musfir Pullat &amp; Fasna Machingal</p>
-              <p className="cc-tag cc-gold">&ldquo;A union written in patience and grace.&rdquo;</p>
+              <div className="cc-copy">
+                <h3 className="cc-names cc-gold">Musfir &amp; Fasna</h3>
+                <p className="cc-full cc-gold">Musfir Pullat &amp; Fasna Machingal</p>
+                <p className="cc-tag cc-gold">&ldquo;A union written in patience and grace.&rdquo;</p>
+              </div>
             </div>
 
             <div className="couple-card glass corner-frame maroon-accent reveal reveal-3">
@@ -190,13 +194,17 @@ export default function InviteWebsite() {
                   className="couple-photo"
                   src="/images/photo-rockey.png"
                   alt="Fasil and Rinshana"
-                  width={768}
+                  width={767}
                   height={1024}
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
-              <h3 className="cc-names cc-gold">Fasil &amp; Rinshana</h3>
-              <p className="cc-full cc-gold">Fasil Pullat &amp; Fathima Rinshana</p>
-              <p className="cc-tag cc-gold">&ldquo;Two souls, one beautiful new beginning.&rdquo;</p>
+              <div className="cc-copy">
+                <h3 className="cc-names cc-gold">Fasil &amp; Rinshana</h3>
+                <p className="cc-full cc-gold">Fasil Pullat &amp; Fathima Rinshana</p>
+                <p className="cc-tag cc-gold">&ldquo;Two souls, one beautiful new beginning.&rdquo;</p>
+              </div>
             </div>
           </div>
         </div>
