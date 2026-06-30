@@ -282,11 +282,98 @@ section{ position: relative; padding: 120px 0; }
 @keyframes stemDrop{ 0%{ top: -100%; } 60%{ top: 100%; } 100%{ top: 100%; } }
 
 @media (max-width: 720px){
-  .couples-split{ grid-template-columns: 1fr; gap: 26px; }
-  .hero-and{ flex-direction: row; gap: 14px; }
-  .hero-and .line{ width: 30px; height: 1px; background: linear-gradient(to right, transparent, var(--gold-500), transparent); }
-  .hero-and .label{ writing-mode: horizontal-tb; }
-  .countdown{ max-width: 360px; gap: 10px; }
+  .couples-split{ grid-template-columns: 1fr; gap: 28px; max-width: 420px; }
+  .couple-block{ animation-delay: 0s !important; }
+  .couple-block .cb-names{ font-size: clamp(24px, 8vw, 34px); }
+  .couple-block .cb-full{ font-size: 12.5px; line-height: 1.45; padding: 0 8px; }
+  .hero-and{ flex-direction: row; gap: 14px; margin: 4px 0; }
+  .hero-and .line{ width: 36px; height: 1px; background: linear-gradient(to right, transparent, var(--gold-500), transparent); }
+  .hero-and .label{ writing-mode: horizontal-tb; font-size: 9px; }
+  .countdown{ max-width: min(100%, 340px); gap: 10px; }
+  .hero-lead{ margin-bottom: 36px; font-size: clamp(16px, 4.5vw, 20px); }
+  .hero{ padding: 128px 16px 64px; }
+  .bismillah-ar{ font-size: clamp(22px, 6.5vw, 32px); }
+}
+
+@media (max-width: 480px){
+  .nav{ padding: 12px 14px; }
+  .nav.scrolled{ padding: 10px 14px; }
+  .brand{ font-size: 11.5px; gap: 8px; letter-spacing: .08em; }
+  .brand svg{ width: 18px; height: 18px; }
+  .nav-cta{ padding: 8px 14px; font-size: 10.5px; letter-spacing: .1em; }
+
+  .container{ padding: 0 16px; }
+  section{ padding: 72px 0; }
+
+  .hero{
+    min-height: 100svh;
+    padding: 112px 12px 52px;
+  }
+  .hero-inner{ width: 100%; }
+  .hero-motif{ width: min(520px, 140vw); height: min(520px, 140vw); }
+  .hero-divider{ height: 36px; margin: 22px auto; }
+  .couples-split{ gap: 22px; margin-bottom: 40px; }
+  .countdown-label{ font-size: 14px; margin-bottom: 14px; }
+  .countdown{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 260px;
+    gap: 8px;
+  }
+  .cd-box{ padding: 12px 6px; border-radius: 12px; }
+  .cd-num{ font-size: clamp(20px, 7vw, 28px); }
+  .cd-label{ font-size: 9px; letter-spacing: .14em; margin-top: 4px; }
+  .scroll-cue{ margin-top: 40px; font-size: 10px; }
+
+  .section-title{ font-size: clamp(22px, 7vw, 32px); line-height: 1.2; }
+  .eyebrow{ font-size: 10.5px; letter-spacing: .24em; gap: 10px; margin-bottom: 14px; }
+  .eyebrow::before, .eyebrow::after{ width: 18px; }
+  .story-lead, .venue-sub{ font-size: 15px; margin-bottom: 40px; padding: 0 4px; }
+
+  .venue-card{ padding: 44px 20px 36px; margin-top: 6px; }
+  .venue-name{ font-size: clamp(22px, 6.5vw, 30px); }
+  .venue-note{ font-size: 13px; padding: 0 4px; }
+  .venue-actions{
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .btn-map{
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: 11.5px;
+  }
+
+  .couples-grid{ gap: 24px; margin-top: 44px; }
+  .couple-card{ padding: 32px 18px 28px; width: 100%; }
+  .couple-card .ci-wrap{ width: min(78%, 220px); }
+  .couple-card .cc-copy{ margin-top: 16px; }
+  .couple-card .cc-names{ font-size: clamp(20px, 6vw, 26px); }
+  .couple-card .cc-full{ font-size: 12px; }
+  .couple-card .cc-tag{ font-size: 14px; line-height: 1.5; }
+
+  .rsvp-simple{ padding: 36px 18px 32px; margin-top: 40px; }
+  .rsvp-simple-label{ font-size: 15.5px; margin-bottom: 22px; }
+  .rsvp-choice{ max-width: none; width: 100%; padding: 16px 18px; font-size: 14px; }
+
+  footer{ padding: 48px 16px 36px; }
+  .modal-box{ margin: 0 16px; padding: 36px 24px 28px; }
+}
+
+@media (max-width: 360px){
+  .countdown{ max-width: 236px; gap: 6px; }
+  .couple-block .cb-names{ font-size: 22px; }
+  .brand{ font-size: 10.5px; }
+}
+
+@media (min-width: 900px){
+  .couple-card .ci-wrap{ width: min(100%, 268px); }
+}
+
+@media (min-width: 1200px){
+  .hero-inner{ max-width: 980px; }
+  .couples-split{ max-width: 960px; gap: 24px; }
+  section{ padding: 132px 0; }
 }
 
 /* ============================================================
@@ -356,9 +443,9 @@ section{ position: relative; padding: 120px 0; }
   align-items: center;
 }
 .couple-card .ci-wrap{
-  width: min(100%, 258px);
-  height: 308px;
-  flex: 0 0 308px;
+  width: min(88%, 248px);
+  aspect-ratio: 683 / 962;
+  flex: 0 0 auto;
   margin: 0;
   display: flex;
   align-items: flex-end;
@@ -368,10 +455,8 @@ section{ position: relative; padding: 120px 0; }
 }
 .couple-card .ci-wrap svg{ width: 100%; height: 100%; }
 .couple-card .ci-wrap img.couple-photo{
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: center bottom;
   display: block;

@@ -46,7 +46,6 @@ export default function InviteWebsite() {
 
           <div className="couples-split">
             <div className="couple-block cb-left">
-              <div className="cb-tag">Couple One</div>
               <div className="cb-names">
                 Musfir<span className="amp">&amp;</span>Fasna
               </div>
@@ -60,7 +59,6 @@ export default function InviteWebsite() {
             </div>
 
             <div className="couple-block cb-right">
-              <div className="cb-tag">Couple Two</div>
               <div className="cb-names">
                 Fasil<span className="amp">&amp;</span>Rinshana
               </div>
@@ -173,10 +171,10 @@ export default function InviteWebsite() {
               <div className="ci-wrap">
                 <img
                   className="couple-photo"
-                  src="/images/musfir-fasna.png?v=3"
+                  src="/images/musfir-fasna.png?v=4"
                   alt="Musfir and Fasna"
-                  width={432}
-                  height={577}
+                  width={683}
+                  height={962}
                   loading="eager"
                   decoding="async"
                 />
@@ -192,10 +190,10 @@ export default function InviteWebsite() {
               <div className="ci-wrap">
                 <img
                   className="couple-photo"
-                  src="/images/fasil-rinshana.png?v=3"
+                  src="/images/fasil-rinshana.png?v=4"
                   alt="Fasil and Rinshana"
-                  width={432}
-                  height={577}
+                  width={683}
+                  height={962}
                   loading="eager"
                   decoding="async"
                 />

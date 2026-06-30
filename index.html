@@ -301,11 +301,29 @@ section{ position: relative; padding: 120px 0; }
 @keyframes stemDrop{ 0%{ top: -100%; } 60%{ top: 100%; } 100%{ top: 100%; } }
 
 @media (max-width: 720px){
-  .couples-split{ grid-template-columns: 1fr; gap: 26px; }
-  .hero-and{ flex-direction: row; gap: 14px; }
-  .hero-and .line{ width: 30px; height: 1px; background: linear-gradient(to right, transparent, var(--gold-500), transparent); }
-  .hero-and .label{ writing-mode: horizontal-tb; }
-  .countdown{ max-width: 360px; gap: 10px; }
+  .couples-split{ grid-template-columns: 1fr; gap: 28px; max-width: 420px; }
+  .couple-block .cb-names{ font-size: clamp(24px, 8vw, 34px); }
+  .couple-block .cb-full{ font-size: 12.5px; line-height: 1.45; padding: 0 8px; }
+  .hero-and{ flex-direction: row; gap: 14px; margin: 4px 0; }
+  .hero-and .line{ width: 36px; height: 1px; background: linear-gradient(to right, transparent, var(--gold-500), transparent); }
+  .hero-and .label{ writing-mode: horizontal-tb; font-size: 9px; }
+  .countdown{ max-width: min(100%, 340px); gap: 10px; }
+  .hero-lead{ margin-bottom: 36px; }
+  .hero{ padding: 128px 16px 64px; }
+}
+@media (max-width: 480px){
+  .nav{ padding: 12px 14px; }
+  .brand{ font-size: 11.5px; }
+  .nav-cta{ padding: 8px 14px; font-size: 10.5px; }
+  .container{ padding: 0 16px; }
+  section{ padding: 72px 0; }
+  .hero{ min-height: 100svh; padding: 112px 12px 52px; }
+  .countdown{ grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 260px; gap: 8px; }
+  .cd-box{ padding: 12px 6px; }
+  .venue-actions{ flex-direction: column; width: 100%; }
+  .btn-map{ width: 100%; justify-content: center; }
+  .couple-card .ci-wrap{ width: min(78%, 220px); }
+  .rsvp-choice{ max-width: none; width: 100%; }
 }
 
 /* ============================================================
@@ -368,12 +386,12 @@ section{ position: relative; padding: 120px 0; }
   display: flex; flex-direction: column; align-items: center;
 }
 .couple-card .ci-wrap{
-  width: min(100%, 258px); height: 308px; flex: 0 0 308px; margin: 0;
+  width: min(88%, 248px); aspect-ratio: 683 / 962; flex: 0 0 auto; margin: 0;
   display: flex; align-items: flex-end; justify-content: center; overflow: visible; background: transparent;
 }
 .couple-card .ci-wrap svg{ width: 100%; height: 100%; }
 .couple-card .ci-wrap img.couple-photo{
-  max-width: 100%; max-height: 100%; width: auto; height: auto;
+  width: 100%; height: 100%;
   object-fit: contain; object-position: center bottom; display: block;
   filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.32));
 }
@@ -700,7 +718,7 @@ footer .foot-fine{ font-size: 11.5px; letter-spacing: .05em; color: rgba(248,242
     <div class="couples-grid">
       <div class="couple-card glass corner-frame reveal reveal-2">
         <div class="ci-wrap">
-          <img class="couple-photo" src="public/images/musfir-fasna.png?v=3" alt="Musfir and Fasna" width="432" height="577" loading="eager" decoding="async">
+          <img class="couple-photo" src="public/images/musfir-fasna.png?v=4" alt="Musfir and Fasna" width="683" height="962" loading="eager" decoding="async">
         </div>
         <div class="cc-copy">
           <h3 class="cc-names cc-gold">Musfir &amp; Fasna</h3>
@@ -711,7 +729,7 @@ footer .foot-fine{ font-size: 11.5px; letter-spacing: .05em; color: rgba(248,242
 
       <div class="couple-card glass corner-frame maroon-accent reveal reveal-3">
         <div class="ci-wrap">
-          <img class="couple-photo" src="public/images/fasil-rinshana.png?v=3" alt="Fasil and Rinshana" width="432" height="577" loading="eager" decoding="async">
+          <img class="couple-photo" src="public/images/fasil-rinshana.png?v=4" alt="Fasil and Rinshana" width="683" height="962" loading="eager" decoding="async">
         </div>
         <div class="cc-copy">
           <h3 class="cc-names cc-gold">Fasil &amp; Rinshana</h3>
