@@ -175,8 +175,8 @@ export default function InviteWebsite() {
                   className="couple-photo"
                   src="/images/musfir-fasna.png"
                   alt="Musfir and Fasna"
-                  width={767}
-                  height={1024}
+                  width={432}
+                  height={577}
                   loading="eager"
                   decoding="async"
                 />
@@ -194,8 +194,8 @@ export default function InviteWebsite() {
                   className="couple-photo"
                   src="/images/fasil-rinshana.png"
                   alt="Fasil and Rinshana"
-                  width={767}
-                  height={1024}
+                  width={432}
+                  height={577}
                   loading="eager"
                   decoding="async"
                 />
