@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="bg-grad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#3a5f34"/>
+      <stop offset="100%" stop-color="#08220f"/>
+    </radialGradient>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5e5b6"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#f5e5b6"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="48" fill="url(#bg-grad)"/>
+  <circle cx="128" cy="128" r="96" fill="none" stroke="url(#gold-grad)" stroke-width="12"/>
+  <path d="M49 128c0-10 8-18 18-18h14l6-14c3-8 10-14 19-14h28c9 0 16 6 19 14l6 14h14c10 0 18 8 18 18v4c0 10-8 18-18 18h-14l-6 14c-3 8-10 14-19 14h-28c-9 0-16-6-19-14l-6-14h-14c-10 0-18-8-18-18v-4Z" fill="none" stroke="url(#gold-grad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="128" y="100" text-anchor="middle" font-family="Cinzel, serif" font-size="64" font-weight="700" fill="url(#gold-grad)">M</text>
+  <text x="128" y="188" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="42" font-style="italic" fill="url(#gold-grad)">&amp;F</text>
+</svg>

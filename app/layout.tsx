@@ -46,6 +46,9 @@ export const metadata: Metadata = {
       'A joyous double wedding celebration · Thursday, 23 July 2026 · Al Jazeera Convention Centre',
     images: [{ url: `${appUrl}/api/og`, width: 1200, height: 630 }],
   },
+  icons: {
+    icon: '/favicon.svg',
+  },
   twitter: {
     card: 'summary_large_image',
   },
