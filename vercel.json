@@ -1,7 +1,7 @@
 {
   "regions": ["bom1"],
   "functions": {
-    "app/api/rsvp/route.ts": { "maxDuration": 10 },
-    "app/api/og/route.tsx": { "maxDuration": 5 }
+    "api/rsvp/route.ts": { "maxDuration": 10 },
+    "api/og/route.tsx": { "maxDuration": 5 }
   }
 }
