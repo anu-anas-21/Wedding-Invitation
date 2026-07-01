@@ -287,6 +287,7 @@ section{ position: relative; padding: 120px 0; }
   .couple-block .cb-names{ font-size: clamp(24px, 8vw, 34px); }
   .couple-block .cb-full{ font-size: 12.5px; line-height: 1.45; padding: 0 8px; }
   .hero-and{ flex-direction: row; gap: 14px; margin: 4px 0; }
+  .hero-and{ justify-content: center; width: 100%; }
   .hero-and .line{ width: 36px; height: 1px; background: linear-gradient(to right, transparent, var(--gold-500), transparent); }
   .hero-and .label{ writing-mode: horizontal-tb; font-size: 9px; }
   .countdown{ max-width: min(100%, 340px); gap: 10px; }

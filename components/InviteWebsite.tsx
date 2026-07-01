@@ -221,14 +221,14 @@ export default function InviteWebsite() {
             <p className="rsvp-simple-label">Will you be joining us on this blessed day?</p>
             <div className="rsvp-choice-row">
               <button type="button" className="rsvp-choice rsvp-choice--yes" data-attendance="Will come">
-                Count me in
+                Count me in!
               </button>
               <button
                 type="button"
                 className="rsvp-choice rsvp-choice--no"
                 data-attendance="Will not come"
               >
-                Unable to join
+                Sad to miss it!
               </button>
             </div>
             <p className="form-note">
